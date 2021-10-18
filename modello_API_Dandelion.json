@@ -43,7 +43,6 @@ model = {
     },    {
       "name": "ambito genomico",
       "topics": {
-#        "Biotechnology": 1.0,
         "DNA": 1.5,
         "RNA": 1.5,
         "Genomics": 3.0
