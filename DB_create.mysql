@@ -1,0 +1,54 @@
+CREATE TABLE `pubblicazione' (
+    `doi' varchar(128) NOT NULL,
+    `title' varchar(500) NOT NULL,
+    `notes' text NOT NULL,
+    `description' text NOT NULL,
+    `license' varchar(100) NOT NULL,
+    `language' varchar(10) NOT NULL,
+    `language_detected' varchar(10) NOT NULL,
+    `access_conditions' text NOT NULL,
+    `access_right' varchar(20) NOT NULL,
+    `access_right_category' varchar(20) NOT NULL,
+    `created' date NOT NULL,
+    `updated' date NOT NULL,
+    `volume' bigint(20) NOT NULL,
+    `method' text NOT NULL,
+     PRIMARY KEY (`doi')
+);
+CREATE TABLE `ricercatore' (
+    `id' varchar(20) NOT NULL,
+    `name' varchar(50) NOT NULL,
+    `affiliation' varchar(500) NOT NULL,
+     PRIMARY KEY (`id')
+) ;
+
+
+CREATE TABLE `file' (
+    `link' varchar(500) NOT NULL,
+    `key_f' varchar(300) NOT NULL,
+    `type' varchar(30) NOT NULL,
+    `size' MEDIUMINT UNSIGNED NOT NULL,
+    `pubblicazione' varchar(128) NOT NULL,
+     CONSTRAINT `col_pub' FOREIGN KEY (`pubblicazione') REFERENCES `pubblicazione' (`doi'),
+     PRIMARY KEY (`link')
+);
+CREATE TABLE `keyword' (
+    `keyword' varchar(50) NOT NULL,	
+     PRIMARY KEY (`keyword')
+) ;
+CREATE TABLE `riferimento' (
+    `pubblicazione' varchar(128) NOT NULL,
+    `keyword' varchar(50) NOT NULL,
+     PRIMARY KEY (`pubblicazione',`keyword'),
+     CONSTRAINT `rif_pub' FOREIGN KEY (`pubblicazione') REFERENCES `pubblicazione' (`doi'),
+     CONSTRAINT `key_rif' FOREIGN KEY (`keyword') REFERENCES `keyword' (`keyword')
+);
+
+
+CREATE TABLE `caricamento' (
+    `pubblicazione' varchar(128) NOT NULL,
+    `ricercatore' varchar(20) NOT NULL,
+     PRIMARY KEY (`pubblicazione',`ricercatore'),
+     CONSTRAINT `car_pub' FOREIGN KEY (`pubblicazione') REFERENCES `pubblicazione' (`doi'),
+     CONSTRAINT `ric_car' FOREIGN KEY (`ricercatore') REFERENCES `ricercatore' (`id')
+);
