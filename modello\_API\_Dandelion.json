@@ -1,0 +1,63 @@
+model = {
+  "description": "modello per la classificazione",
+  "lang": "en",
+  "categories": [
+    {
+      "name": "ambito informatico",
+      "topics": {
+        "Artificial_intelligence": 1.0,
+        "Neural_network": 1.0,
+        "Deep_learning": 1.0,
+        "Supervised_learning":1.0,
+        "Reinforcement_learning":1.0,
+        "Natural_language_processing":1.0
+      }
+    },
+    {
+      "name": "social network",
+      "topics": {
+        "Social_media":1.0,
+        "Reddit": 1.0,
+        "Twitter": 1.0,
+        "Facebook": 1.0,
+        "Social_network": 1.0
+      }
+    },
+    {
+      "name": "ambito epidemiologico",
+      "topics": {
+       "Incidence_(epidemiology)": 1.0,
+        "Epidemiology": 1.0,
+        "Cohort_study": 1.0,
+        "Observational_study": 1.0
+      }
+    },
+      {
+      "name": "ambito clinico",
+      "topics": {
+        "Pharmacotherapy": 1.0,
+        "Pharmacology": 1.0,
+        "Therapy": 1.0,
+        "Surgery": 1.0
+      }
+    },    {
+      "name": "ambito genomico",
+      "topics": {
+#        "Biotechnology": 1.0,
+        "DNA": 1.5,
+        "RNA": 1.5,
+        "Genomics": 3.0
+      }
+    },    
+      {
+      "name": "ambito psicologico",
+      "topics": {
+        "Mental_health": 1.0,
+        "Mental_disorder": 1.0,
+        "Psychology": 1.0,
+        "Psychiatry": 1.0,
+        "DSM-5": 1.0
+      }
+    } 
+  ]
+}
