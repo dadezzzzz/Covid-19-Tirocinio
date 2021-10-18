@@ -1,0 +1,7 @@
+CREATE TABLE `pubblicazione' (
+     `id` INT NOT NULL AUTO_INCREMENT,
+    `text' text NOT NULL,
+    `keyword' VARCHAR(15) NOT NULL,
+    `numero' INT NOT NULL,
+    `TFIDF' FLOAT NOT NULL
+);
